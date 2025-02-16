@@ -7,4 +7,4 @@ Our Game Jam game for Brackey's Game Jam 2025.1
 Programming:
 - dani3ljh
 - Not-So-Human
-- More
+- coachinglake
