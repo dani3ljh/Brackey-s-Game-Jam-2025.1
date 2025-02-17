@@ -8,3 +8,9 @@ Programming:
 - dani3ljh
 - Not-So-Human
 - coachinglake
+
+## Codes:
+
+In the menu in game enter the following codes to get a riddle
+- calculus
+- slime
