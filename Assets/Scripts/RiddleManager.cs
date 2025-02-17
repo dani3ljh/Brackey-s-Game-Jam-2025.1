@@ -13,11 +13,13 @@ public class RiddleManager : MonoBehaviour
     [SerializeField] private string answer;
     [HideInInspector] public bool hasSolved = false;
 
-    [Header("GameObjects")]
+    [Header("Game Objects")]
     [SerializeField] private InputField input;
     [SerializeField] private GameObject errorText;
     [SerializeField] private PlayerControls pc;
     [SerializeField] private HatManager hm;
+    
+    [Header("Prefabs")]
     [SerializeField] private GameObject hatPrefab;
 
     /// <summary>

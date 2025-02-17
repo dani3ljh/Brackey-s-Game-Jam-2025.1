@@ -9,7 +9,7 @@ using UnityEngine.UI;
 /// </summary>
 public class SecretManager : MonoBehaviour
 {
-    [Header("GameObjects")]
+    [Header("Game Objects")]
     [SerializeField] private RiddleManager[] riddles;
     [SerializeField] private InputField input;
     [SerializeField] private GameObject errorText;

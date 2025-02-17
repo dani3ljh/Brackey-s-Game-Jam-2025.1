@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-///
+/// Takes Input to control the player
 /// </summary>
 public class PlayerControls : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class PlayerControls : MonoBehaviour
     [HideInInspector] public bool isRiddleOpen = false;
     [HideInInspector] public bool isMenuOpen = false;
 
-    [Header("GameObjects")]
+    [Header("Game Objects")]
     [SerializeField] private GameObject menu;
 
     private Rigidbody2D rb;
