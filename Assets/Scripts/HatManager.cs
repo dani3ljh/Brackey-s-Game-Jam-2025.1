@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Authentication;
-using Unity.Burst.Intrinsics;
 using UnityEngine;
-using UnityEngine.Video;
 
 /// <summary>
 /// Manages Secret Hats
