@@ -7,7 +7,7 @@ using UnityEngine;
 /// Makes the camera follow the player aka the better ciniminchin 
 /// </summary>
 
-public class FollowPlayer : MonoBehaviour
+public class CameraFollow : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] private float speed;
