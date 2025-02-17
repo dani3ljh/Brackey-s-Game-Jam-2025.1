@@ -9,22 +9,33 @@ using UnityEngine.UI;
 /// </summary>
 public class SecretManager : MonoBehaviour
 {
-
-    [Header("Data")]
-    [SerializeField] private string[] codes;
-    [SerializeField] private GameObject[] riddles;
-
     [Header("GameObjects")]
+    [SerializeField] private RiddleManager[] riddles;
     [SerializeField] private InputField input;
     [SerializeField] private GameObject errorText;
+    [SerializeField] private GameObject redeemedText;
     [SerializeField] private PlayerControls pc;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before any of the Update methods are called.
     /// </summary>
     private void Start() {
-        foreach (GameObject riddle in riddles) {
-            riddle.SetActive(false);
+        foreach (RiddleManager riddle in riddles) {
+            riddle.gameObject.SetActive(false);
+        }
+        errorText.SetActive(false);
+        redeemedText.SetActive(false);
+    }
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    private void Update() {
+        if (Input.GetButtonDown("Menu")) {
+            pc.isMenuOpen = false;
+            errorText.SetActive(false);
+            redeemedText.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
@@ -36,14 +47,19 @@ public class SecretManager : MonoBehaviour
         input.text = "";
 
         int i;
-        for (i = 0; i < codes.Length; i++) {
-            if (codes[i] == inputText) {
+        for (i = 0; i < riddles.Length; i++) {
+            if (riddles[i].code == inputText) {
                 break;
             }
         }
 
-        if (i == codes.Length) {
+        if (i == riddles.Length) {
             errorText.SetActive(true);
+            return;
+        }
+
+        if (riddles[i].hasSolved) {
+            redeemedText.SetActive(true);
             return;
         }
 
@@ -51,7 +67,7 @@ public class SecretManager : MonoBehaviour
 
         pc.isMenuOpen = false;
         pc.isRiddleOpen = true;
-        riddles[i].SetActive(true);
+        riddles[i].gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 }

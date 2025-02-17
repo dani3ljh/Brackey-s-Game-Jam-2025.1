@@ -309,18 +309,19 @@ RectTransform:
   m_GameObject: {fileID: 206182189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.42010173, y: 0.42010173, z: 0.42010173}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 690794766}
   - {fileID: 1522828000}
   - {fileID: 1318108297}
   - {fileID: 950047082}
+  - {fileID: 295109030}
   m_Father: {fileID: 333428874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000025431, y: 0}
   m_SizeDelta: {x: 1130.75, y: 702.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206182191
@@ -373,14 +374,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a52552febccc048a77c9860aa9449f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  codes:
-  - calculus
-  - slime
   riddles:
-  - {fileID: 723503058}
-  - {fileID: 1256672835}
+  - {fileID: 723503063}
+  - {fileID: 1256672837}
   input: {fileID: 690794767}
   errorText: {fileID: 950047079}
+  redeemedText: {fileID: 295109029}
   pc: {fileID: 863315680}
 --- !u!1 &225766973
 GameObject:
@@ -421,7 +420,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 2
     m_BestFit: 0
@@ -591,6 +590,85 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &295109029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 295109030}
+  - component: {fileID: 295109032}
+  - component: {fileID: 295109031}
+  m_Layer: 5
+  m_Name: Already Redeemed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &295109030
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295109029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 206182190}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.0000076293945, y: -0.00000071525574}
+  m_SizeDelta: {x: 661.1513, y: 70.5667}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &295109031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295109029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.014490604, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Code Already Redeemed
+--- !u!222 &295109032
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295109029}
+  m_CullTransparentMesh: 1
 --- !u!1 &326418982
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +727,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -718,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -832,7 +910,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -1003,7 +1081,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -1215,7 +1293,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -1294,7 +1372,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -1501,7 +1579,7 @@ RectTransform:
   m_GameObject: {fileID: 723503058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.42010173, y: 0.42010173, z: 0.42010173}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2074325394}
@@ -1513,7 +1591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000025431, y: 0}
   m_SizeDelta: {x: 1130.75, y: 702.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &723503061
@@ -1566,10 +1644,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825c3edd900b76c4f92f0bcd48975951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  code: calculus
   answer: 111
+  hasSolved: 0
   input: {fileID: 2074325395}
   errorText: {fileID: 852688575}
   pc: {fileID: 863315680}
+  hm: {fileID: 7139447163348025505}
+  hatPrefab: {fileID: 1056872763104741934, guid: 89b1134a8fe47d340a9d1eb4548a5fcd, type: 3}
 --- !u!1 &852688575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,7 +1710,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -1829,7 +1911,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -2041,7 +2123,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -2109,7 +2191,7 @@ RectTransform:
   m_GameObject: {fileID: 1256672835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.42010173, y: 0.42010173, z: 0.42010173}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 152972077}
@@ -2120,7 +2202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000025431, y: 0}
   m_SizeDelta: {x: 1130.75, y: 702.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256672837
@@ -2135,10 +2217,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825c3edd900b76c4f92f0bcd48975951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  code: slime
   answer: yes
+  hasSolved: 0
   input: {fileID: 152972074}
   errorText: {fileID: 628268840}
   pc: {fileID: 863315680}
+  hm: {fileID: 7139447163348025505}
+  hatPrefab: {fileID: 4653837931972723098, guid: e5d7d30b8619ccb4784942064c272ae1, type: 3}
 --- !u!114 &1256672838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,7 +2454,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 2
     m_BestFit: 0
@@ -2401,7 +2487,7 @@ GameObject:
   - component: {fileID: 1522828002}
   - component: {fileID: 1522828001}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2447,7 +2533,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ab46a3944ef2e7d438f4e05e0cbdb443, type: 3}
     m_FontSize: 91
     m_FontStyle: 0
     m_BestFit: 0
@@ -2610,7 +2696,7 @@ GameObject:
   - component: {fileID: 1623736676}
   - component: {fileID: 1623736675}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2656,7 +2742,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ab46a3944ef2e7d438f4e05e0cbdb443, type: 3}
     m_FontSize: 91
     m_FontStyle: 0
     m_BestFit: 0
@@ -2691,7 +2777,7 @@ GameObject:
   - component: {fileID: 1720155304}
   - component: {fileID: 1720155303}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Problem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2812,7 +2898,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -3021,7 +3107,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e9f6c8da039e8e48a3221622125d7c2, type: 3}
     m_FontSize: 50
     m_FontStyle: 2
     m_BestFit: 0
@@ -3212,7 +3298,7 @@ GameObject:
   - component: {fileID: 2093323573}
   - component: {fileID: 2093323572}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3258,7 +3344,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ab46a3944ef2e7d438f4e05e0cbdb443, type: 3}
     m_FontSize: 91
     m_FontStyle: 0
     m_BestFit: 0
@@ -3467,6 +3553,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d27c841b97603b34b8519fc53c7152e9, type: 3}
+--- !u!114 &7139447163348025505 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3162900314024410434, guid: d27c841b97603b34b8519fc53c7152e9, type: 3}
+  m_PrefabInstance: {fileID: 7139447163348025504}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e558af7e696904b99ab03e7066101b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

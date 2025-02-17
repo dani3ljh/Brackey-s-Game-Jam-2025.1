@@ -39,7 +39,7 @@ public class PlayerControls : MonoBehaviour
         horiz = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Menu") && !isRiddleOpen) {
+        if (Input.GetButtonDown("Menu") && !isMenuOpen && !isRiddleOpen) {
             isMenuOpen = !isMenuOpen;
             menu.SetActive(isMenuOpen);
         }
