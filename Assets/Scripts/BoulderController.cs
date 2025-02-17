@@ -8,15 +8,16 @@ using UnityEngine;
 /// </summary>
 public class BoulderController : MonoBehaviour
 {
-
     [Header("Data")]
-    public float dif = 100;
-    public float difAccel = 100;
-    public float scaleIncre = 2;
-    public float gravity = -5;
+    [SerializeField] private float deltaX = 100;
+    [SerializeField] private float deltaScale = 2;
+    [SerializeField] private float startGravity = -5;
+    private float nextX;
+    private float gravity;
+
     [Header("Game Objects")]
-    public GameObject dust;
-    Rigidbody2D rb;
+    [SerializeField] private Transform dust;
+    private Rigidbody2D rb;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before any of the Update methods are called.
@@ -24,6 +25,8 @@ public class BoulderController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        nextX = deltaX;
+        gravity = startGravity;
     }
 
     /// <summary>
@@ -31,14 +34,13 @@ public class BoulderController : MonoBehaviour
     /// </summary>
     void Update()
     {
-        Vector2 dis = transform.position;
-        if (math.round(dis.x) == dif)
+        if (math.round(transform.position.x) == nextX)
         {
-            dif += difAccel;
-            gravity = gravity - scaleIncre;
+            nextX += deltaX;
+            gravity -= deltaScale;
         }
-        Vector2 grav = new Vector2(gravity, 0);
-        rb.AddForce(grav);
+
+        rb.AddForce(new(gravity, 0));
         dust.transform.position = transform.position;
     }
 }

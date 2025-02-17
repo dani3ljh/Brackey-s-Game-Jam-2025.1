@@ -8432,11 +8432,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7382375f7510db488122717ca811c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dif: 10
-  difAccel: 10
-  scaleIncre: 1
-  gravity: -5
-  dust: {fileID: 6324799424385663988}
+  deltaX: 10
+  deltaScale: 2
+  startGravity: -5
+  dust: {fileID: 103056645822496897}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
