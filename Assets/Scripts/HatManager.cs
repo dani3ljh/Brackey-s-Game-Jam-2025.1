@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Video;
 
 /// <summary>
-///
+/// Manages Secret Hats
 /// </summary>
 public class HatManager : MonoBehaviour
 {
@@ -16,12 +16,9 @@ public class HatManager : MonoBehaviour
     private int hats = 0;
 
     /// <summary>
-    /// Start is called on the frame when a script is enabled just before any of the Update methods are called.
+    /// Instantiates a hat on the player
     /// </summary>
-    private void Start() {
-        
-    }
-
+    /// <param name="hat">Hat prefab</param>
     public void AddHat(GameObject hat) {
         GameObject newHat = Instantiate(hat, transform);
         
