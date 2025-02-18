@@ -51,6 +51,8 @@ public class PlayerControls : MonoBehaviour
     /// Update is called at 50fps, if the MonoBehaviour is enabled.
     /// </summary>
     private void FixedUpdate() {
-        rb.velocity = Time.deltaTime * speed * new Vector2(horiz, vert);
+        if (!isMenuOpen && !isRiddleOpen) {
+            rb.velocity = Time.deltaTime * speed * new Vector2(horiz, vert);
+        }
     }
 }
