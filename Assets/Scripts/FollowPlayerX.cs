@@ -1,26 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows.WebCam;
 
 
 
 /// <summary>
-/// makes the walls follow the player
+/// Follow the player's x
 /// </summary>
 public class FollowPlayerX : MonoBehaviour
 {
-    [Header("Data")]
     [Header("Game Objects")]
-    public GameObject player;
+    public Transform player;
 
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
     void Update()
     {
-        Vector3 orgPos = transform.position;
-        Vector3 plaPos = player.transform.position;
-        transform.position = new Vector3(plaPos.x, orgPos.y, orgPos.z);
+        Vector3 startPos = transform.position;
+        Vector3 playerPos = player.position;
+        transform.position = new Vector3(playerPos.x, startPos.y, startPos.z);
     }
 }
