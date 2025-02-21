@@ -10,7 +10,7 @@ public class HatManager : MonoBehaviour
     [Header("Data")]
     [SerializeField] private float initialY;
     [SerializeField] private float deltaY;
-    private int hats = 0;
+    public int hats = 0;
 
     /// <summary>
     /// Instantiates a hat on the player

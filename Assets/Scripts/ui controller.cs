@@ -9,6 +9,10 @@ public class uicontroller : MonoBehaviour
     [Header("Data")]
     public float minValue;
     public float maxValue;
+    public float offsetY;
+    public float camSizeX;
+    public float camSizeY;
+
 
 
 
@@ -16,6 +20,9 @@ public class uicontroller : MonoBehaviour
     public Text MeterCounter;
     public GameObject boulder;
     public Slider ProgressBar;
+    public GameObject arrow;
+    public GameObject player;
+    public GameObject cam;
 
 
     void Start()
@@ -29,5 +36,20 @@ public class uicontroller : MonoBehaviour
     {
         MeterCounter.text = Mathf.Round(boulder.transform.position.x).ToString() + "M";
         ProgressBar.value = boulder.transform.position.x;
+        Vector2 newArrowpos = new (player.transform.position.x, player.transform.position.y + offsetY);
+        arrow.transform.position = newArrowpos;
+        Vector3 offset = boulder.transform.position - arrow.transform.position;
+        arrow.transform.rotation = Quaternion.LookRotation(Vector3.forward, offset);
+
+        if (boulder.transform.position.x > cam.transform.position.x + camSizeX || boulder.transform.position.x < cam.transform.position.x - camSizeX || boulder.transform.position.y > cam.transform.position.y + camSizeY || boulder.transform.position.y < cam.transform.position.y - camSizeY)
+        {
+            arrow.SetActive(true);
+        }
+        else 
+        {
+            arrow.SetActive(false);
+        }
+
+
     }
 }

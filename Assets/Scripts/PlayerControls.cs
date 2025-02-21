@@ -9,11 +9,13 @@ public class PlayerControls : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] private float speed = 10f;
+    [SerializeField] private float newspeed = 10f;
     [HideInInspector] public bool isRiddleOpen = false;
     [HideInInspector] public bool isMenuOpen = false;
 
     [Header("Game Objects")]
     [SerializeField] private GameObject menu;
+    [SerializeField] private HatManager hm;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -38,6 +40,8 @@ public class PlayerControls : MonoBehaviour
     private void Update() {
         horiz = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
+        newspeed = speed * hm.hats + speed;
+        
 
         if (Input.GetButtonDown("Menu") && !isMenuOpen && !isRiddleOpen) {
             isMenuOpen = !isMenuOpen;
@@ -53,7 +57,7 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     private void FixedUpdate() {
         if (!isMenuOpen && !isRiddleOpen) {
-            rb.velocity = Time.deltaTime * speed * new Vector2(horiz, vert);
+            rb.velocity = Time.deltaTime * newspeed * new Vector2(horiz, vert);
         }
     }
 }
