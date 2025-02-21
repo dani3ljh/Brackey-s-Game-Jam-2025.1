@@ -42,6 +42,7 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetButtonDown("Menu") && !isMenuOpen && !isRiddleOpen) {
             isMenuOpen = !isMenuOpen;
             menu.SetActive(isMenuOpen);
+
         }
 
         anim.SetBool("isWalking", horiz != 0 || vert != 0);
