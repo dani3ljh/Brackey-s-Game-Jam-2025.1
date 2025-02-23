@@ -1,4 +1,4 @@
-# Brackey's Game Jam 2025.1
+# Stuck Between **THE BOULDER** and a hard place
 
 Our Game Jam game for Brackey's Game Jam 2025.1
 
