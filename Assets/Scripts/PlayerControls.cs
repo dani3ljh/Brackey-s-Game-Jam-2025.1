@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 /// <summary>
 /// Takes Input to control the player
@@ -9,19 +10,17 @@ public class PlayerControls : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] private float speed = 10f;
-    [SerializeField] private float newspeed = 10f;
     [HideInInspector] public bool isRiddleOpen = false;
     [HideInInspector] public bool isMenuOpen = false;
+    private float currSpeed = 10f;
+    private float horiz;
+    private float vert;
 
     [Header("Game Objects")]
     [SerializeField] private GameObject menu;
     [SerializeField] private HatManager hm;
-
     private Rigidbody2D rb;
     private Animator anim;
-
-    private float horiz;
-    private float vert;
 
     /// <summary>
     /// /// Start is called on the frame when a script is enabled just before any of the Update methods are called.
@@ -32,6 +31,7 @@ public class PlayerControls : MonoBehaviour
         menu.SetActive(false);
         isRiddleOpen = false;
         isMenuOpen = false;
+        currSpeed = speed;
     }
 
     /// <summary>
@@ -40,13 +40,11 @@ public class PlayerControls : MonoBehaviour
     private void Update() {
         horiz = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
-        newspeed = speed * hm.hats + speed;
-        
+        currSpeed = speed * hm.hats + speed;
 
         if (Input.GetButtonDown("Menu") && !isMenuOpen && !isRiddleOpen) {
             isMenuOpen = !isMenuOpen;
             menu.SetActive(isMenuOpen);
-
         }
 
         anim.SetBool("isWalking", horiz != 0 || vert != 0);
@@ -57,7 +55,9 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     private void FixedUpdate() {
         if (!isMenuOpen && !isRiddleOpen) {
-            rb.velocity = Time.deltaTime * newspeed * new Vector2(horiz, vert);
+            rb.velocity = Time.deltaTime * currSpeed * new Vector2(horiz, vert);
+        } else {
+            rb.velocity = Vector2.zero;
         }
     }
 }

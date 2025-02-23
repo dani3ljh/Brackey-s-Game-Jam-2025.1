@@ -3,31 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+/// <summary>
+/// Handles Making Tilemap
+/// </summary>
 public class TilemapManager : MonoBehaviour
 {
-    [SerializeField] int width, height;
-    [SerializeField] Tilemap grassTilemap, rockTilemap;
-    [SerializeField] Tile grass, rock;
-    [SerializeField] float rockChance;
+    [Header("Data")]
+    [SerializeField] private int width, height;
+    [SerializeField] private float startRockChance;
+    [SerializeField] private float deltaRockChance;
+    [SerializeField] private float maxRockChance;
+    private float rockChance;
 
-    private void Start()
-    {
+    [Header("Game Objects")]
+    [SerializeField] private Tilemap grassTilemap, rockTilemap;
+    [SerializeField] private Tile grass, rock;
+
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before any of the Update methods are called.
+    /// </summary>
+    private void Start() {
+        rockChance = startRockChance;
         GenerateTilemap();
     }
 
-    void GenerateTilemap()
-    {
-        for (int x = 0; x < width; x++)
-        {
-            rockChance += 0.01f;
-            for (int y = 0; y < height; y++)
-            {
-                if (Random.Range(0, 100) > rockChance)
-                {
+    /// <summary>
+    /// Generates Tilemap filled with random rocks.
+    /// </summary>
+    private void GenerateTilemap() {
+        for (int x = 0; x < width; x++) {
+            rockChance += deltaRockChance;
+            for (int y = 0; y < height; y++) {
+                if (Random.Range(0, 100) > rockChance) {
                     grassTilemap.SetTile(new Vector3Int(x, y, 0), grass);
-                }
-                else
-                {
+                } else {
                     grassTilemap.SetTile(new Vector3Int(x, y, 0), grass);
                     rockTilemap.SetTile(new Vector3Int(x, y, 0), rock);
                 }

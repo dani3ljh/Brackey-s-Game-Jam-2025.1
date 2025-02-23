@@ -5,9 +5,12 @@ Our Game Jam game for Brackey's Game Jam 2025.1
 ## Credits:
 
 Programming:
-- dani3ljh
-- Not-So-Human
-- coachinglake
+- dani3ljh (Lead Programmer)
+- coachinglake (Yandere Sim Dev Prodigy)
+- Not-So-Human (Unc Programmer)
+
+Fonts:
+- [Ubuntu Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Ubuntu.zip)
 
 ## Codes:
 

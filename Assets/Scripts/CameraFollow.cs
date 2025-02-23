@@ -24,8 +24,7 @@ public class CameraFollow : MonoBehaviour
     /// <summary>
     /// /// Start is called on the frame when a script is enabled just before any of the Update methods are called.
     /// </summary>
-    void Start()
-    {
+    void Start() {
         _camera = Camera.main;
         Vector2 cameraScreenSize = new(Screen.width, Screen.height);
         screenSize = _camera.ScreenToWorldPoint(cameraScreenSize);
@@ -35,8 +34,7 @@ public class CameraFollow : MonoBehaviour
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
-    void Update()
-    {
+    void Update() {
         Vector3 newPos = new(player.position.x, player.position.y, transform.position.z);
 
         if (newPos.x < minX + screenSize.x) {
