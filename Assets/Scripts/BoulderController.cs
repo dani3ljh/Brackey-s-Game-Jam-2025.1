@@ -32,7 +32,7 @@ public class BoulderController : MonoBehaviour
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
-    void Update()
+    void FixedUpdate()
     {
         if (math.round(transform.position.x) == nextX)
         {
