@@ -1,6 +1,7 @@
 # Stuck Between **THE BOULDER** and a hard place
 
 Our Game Jam game for Brackey's Game Jam 2025.1
+Is procedurally generated may not always be beatable
 
 ## Credits:
 
