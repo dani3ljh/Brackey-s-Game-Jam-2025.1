@@ -14,3 +14,6 @@ Programming:
 In the menu in game enter the following codes to get a riddle
 - calculus
 - slime
+- retro
+- tane
+- hair
